@@ -1,0 +1,6 @@
+ru.yandexpraktikum.all_notes
+string add
+string all_notes
+string cancel
+string delete
+string delete_note_question

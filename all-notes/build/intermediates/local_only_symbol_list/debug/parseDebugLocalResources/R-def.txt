@@ -1,0 +1,7 @@
+R_DEF: Internal format may change without notice
+local
+string add
+string all_notes
+string cancel
+string delete
+string delete_note_question

@@ -1,0 +1,5 @@
+int string add 0x0
+int string all_notes 0x0
+int string cancel 0x0
+int string delete 0x0
+int string delete_note_question 0x0
