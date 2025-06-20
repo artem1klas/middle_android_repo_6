@@ -2,11 +2,10 @@ package ru.yandexpraktikum.core.data.repository;
 
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
-import dagger.internal.Provider;
-import dagger.internal.Providers;
 import dagger.internal.QualifierMetadata;
 import dagger.internal.ScopeMetadata;
 import javax.annotation.processing.Generated;
+import javax.inject.Provider;
 import ru.yandexpraktikum.core.data.db.NoteDao;
 import ru.yandexpraktikum.core.data.mappers.DataNoteMapper;
 
@@ -21,10 +20,7 @@ import ru.yandexpraktikum.core.data.mappers.DataNoteMapper;
     "unchecked",
     "rawtypes",
     "KotlinInternal",
-    "KotlinInternalInJava",
-    "cast",
-    "deprecation",
-    "nullness:initialization.field.uninitialized"
+    "KotlinInternalInJava"
 })
 public final class NotesRepositoryImpl_Factory implements Factory<NotesRepositoryImpl> {
   private final Provider<NoteDao> noteDaoProvider;
@@ -40,11 +36,6 @@ public final class NotesRepositoryImpl_Factory implements Factory<NotesRepositor
   @Override
   public NotesRepositoryImpl get() {
     return newInstance(noteDaoProvider.get(), noteMapperProvider.get());
-  }
-
-  public static NotesRepositoryImpl_Factory create(javax.inject.Provider<NoteDao> noteDaoProvider,
-      javax.inject.Provider<DataNoteMapper> noteMapperProvider) {
-    return new NotesRepositoryImpl_Factory(Providers.asDaggerProvider(noteDaoProvider), Providers.asDaggerProvider(noteMapperProvider));
   }
 
   public static NotesRepositoryImpl_Factory create(Provider<NoteDao> noteDaoProvider,

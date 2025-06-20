@@ -17,10 +17,7 @@ import javax.annotation.processing.Generated;
     "unchecked",
     "rawtypes",
     "KotlinInternal",
-    "KotlinInternalInJava",
-    "cast",
-    "deprecation",
-    "nullness:initialization.field.uninitialized"
+    "KotlinInternalInJava"
 })
 public final class PresentationNoteMapper_Factory implements Factory<PresentationNoteMapper> {
   @Override
@@ -37,6 +34,6 @@ public final class PresentationNoteMapper_Factory implements Factory<Presentatio
   }
 
   private static final class InstanceHolder {
-    static final PresentationNoteMapper_Factory INSTANCE = new PresentationNoteMapper_Factory();
+    private static final PresentationNoteMapper_Factory INSTANCE = new PresentationNoteMapper_Factory();
   }
 }
