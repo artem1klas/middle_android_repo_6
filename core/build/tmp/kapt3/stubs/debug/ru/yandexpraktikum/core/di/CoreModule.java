@@ -1,6 +1,7 @@
 package ru.yandexpraktikum.core.di;
 
-@kotlin.Metadata(mv = {1, 9, 0}, k = 1, xi = 48, d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\bf\u0018\u0000 \u00062\u00020\u0001:\u0001\u0006J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\'\u00a8\u0006\u0007"}, d2 = {"Lru/yandexpraktikum/core/di/CoreModule;", "", "bindRepository", "Lru/yandexpraktikum/core/domain/repository/NotesRepository;", "repositoryImpl", "Lru/yandexpraktikum/core/data/repository/NotesRepositoryImpl;", "Companion", "core_debug"})
+@dagger.Module()
+@kotlin.Metadata(mv = {1, 9, 0}, k = 1, xi = 48, d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\bg\u0018\u0000 \u00062\u00020\u0001:\u0001\u0006J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\'\u00a8\u0006\u0007"}, d2 = {"Lru/yandexpraktikum/core/di/CoreModule;", "", "bindRepository", "Lru/yandexpraktikum/core/domain/repository/NotesRepository;", "repositoryImpl", "Lru/yandexpraktikum/core/data/repository/NotesRepositoryImpl;", "Companion", "core_debug"})
 public abstract interface CoreModule {
     @org.jetbrains.annotations.NotNull()
     public static final ru.yandexpraktikum.core.di.CoreModule.Companion Companion = null;
