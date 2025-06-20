@@ -6,6 +6,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -14,11 +15,9 @@ import ru.yandexpraktikum.add_note.presentation.AddNoteScreen
 import ru.yandexpraktikum.add_note.presentation.AddNoteViewModel
 import ru.yandexpraktikum.all_notes.presentation.AllNotesScreen
 import ru.yandexpraktikum.all_notes.presentation.AllNotesViewModel
-import ru.yandexpraktikum.notekeeper.di.AppContainer
 
 @Composable
 fun NoteKeeperNavHost(
-    appContainer: AppContainer,
     navController: NavHostController
 ) {
     NavHost(
@@ -26,17 +25,7 @@ fun NoteKeeperNavHost(
         startDestination = Screen.AllNotes.route
     ) {
         composable(route = Screen.AllNotes.route) {
-            var allNotesContainer by remember { mutableStateOf<Any?>(null) }
-            DisposableEffect(Unit) {
-                allNotesContainer = appContainer.getAllNotesContainer()
-                onDispose {
-                    appContainer.releaseAllNotesContainer()
-                    allNotesContainer = null
-                }
-            }
-            val vm: AllNotesViewModel = viewModel(
-                factory = appContainer.getAllNotesContainer()?.getAllNotesViewModelFactory()
-            )
+            val vm: AllNotesViewModel = hiltViewModel()
             AllNotesScreen(
                 viewModel = vm,
                 onAddNoteClick = {
@@ -45,17 +34,7 @@ fun NoteKeeperNavHost(
             )
         }
         composable(route = Screen.AddNote.route) {
-            var addNoteContainer by remember { mutableStateOf<Any?>(null) }
-            DisposableEffect(Unit) {
-                addNoteContainer = appContainer.getAddNoteContainer()
-                onDispose {
-                    appContainer.releaseAddNoteContainer()
-                    addNoteContainer = null
-                }
-            }
-            val vm: AddNoteViewModel = viewModel(
-                factory = appContainer.getAddNoteContainer()?.getAddNoteViewModelFactory()
-            )
+            val vm: AddNoteViewModel = hiltViewModel()
             AddNoteScreen(
                 viewModel = vm,
                 onBackClick = {
