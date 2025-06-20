@@ -1,6 +1,0 @@
-ru.yandexpraktikum.add_note
-string add_note
-string back
-string content
-string save
-string title

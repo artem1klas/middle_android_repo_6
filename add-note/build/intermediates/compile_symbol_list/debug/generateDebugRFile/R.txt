@@ -1,5 +1,0 @@
-int string add_note 0x0
-int string back 0x0
-int string content 0x0
-int string save 0x0
-int string title 0x0
